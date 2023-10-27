@@ -8,6 +8,7 @@ export class Type {
     equals(other: Type): boolean {
         return this.id === other.id;
     }
+    
 
     public static Normale = new Type("652d03ffec594fc5b8a0248a");
     public static Lotta = new Type("652d0400ec594fc5b8a0248b");
