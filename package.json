@@ -1,5 +1,5 @@
 {
-  "name": "PokedexApiJS",
+  "name": "pokedexapi-js",
   "version": "0.0.0-development",
   "description": "some description",
   "main": "dist/index.js",
