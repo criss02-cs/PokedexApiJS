@@ -11,17 +11,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Install GitVersion
-              uses: gittools/actions/gitversion/setup@v0.9.7
-              with:
-                versionSpec: 5.x
-            - name: Determine Version
-              uses: gittools/actions/gitversion/execute@v0.9.7
-              id: gitversion
-            - name: Display GitVersion outputs
-              run: |
-                echo "Version: ${{ steps.gitversion.outputs.SemVer }}"
-                echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}"
+            - name: Semantic Release
+              uses: cycjimmy/semantic-release-action@v4
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             - name: Setup node
               uses: actions/setup-node@v3
               with:
