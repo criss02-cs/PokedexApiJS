@@ -18,7 +18,8 @@
     "start": "npx tsc && node dist/index.js",
     "test": "jest",
     "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "acp": "git add . && npm run commit && git push"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",

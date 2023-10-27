@@ -10,24 +10,16 @@ jobs:
     publish:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
-            - name: Install GitVersion
-              uses: gittools/actions/gitversion/setup@v0.9.7
-              with:
-                versionSpec: 5.x
-            - name: Determine Version
-              uses: gittools/actions/gitversion/execute@v0.9.7
-              id: gitversion
-            - name: Display GitVersion outputs
-              run: |
-                echo "Version: ${{ steps.gitversion.outputs.SemVer }}"
-                echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}"
             - name: Setup node
               uses: actions/setup-node@v3
               with:
                 node-version: "20"
             - run: npm ci
             - run: npm test
-            - uses: JS-DevTools/npm-publish@v3
-              with:
-                token: ${{ secrets.NPM_TOKEN }}
+            # - uses: JS-DevTools/npm-publish@v3
+            #   with:
+            #     token: ${{ secrets.NPM_TOKEN }}
+            - run: npm run semantic-release
+              env:
+                NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
