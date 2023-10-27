@@ -1,7 +1,7 @@
 on:
     workflow_dispatch:   # allow running the workflow manually from the GitHub UI
     push:
-        branches: [ main ]
+        branches: main
     pull_request:
         branches:
             - '*'           #Run the workflow for all pull requests
