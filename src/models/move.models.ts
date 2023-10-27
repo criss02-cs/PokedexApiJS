@@ -1,7 +1,5 @@
-import { Transform, Expose } from "class-transformer";
 import { Resource } from "./resource.model";
 import { Type } from "./type.model";
-import TypeConverter from "../decorators/type.decorator";
 
 type MoveCategory = 'Special' | 'Physical' | 'Status';
 
