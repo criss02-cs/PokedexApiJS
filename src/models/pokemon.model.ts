@@ -29,11 +29,14 @@ class Statistiche {
 
 class AbilitaPokemon {
     abilityId: string;
+    abilityName: string;
     isHidden: boolean;
 }
 
 class MossaPokemon {
     moveId: string;
+    moveName: string;
+    moveType: string;
     method: MethodLearn;
     level: number;
 }

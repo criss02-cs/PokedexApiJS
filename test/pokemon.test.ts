@@ -20,6 +20,7 @@ describe("Pokemon test", () => {
         const client = new MainClient();
         const pokemon = await client.pokemon.getPokemonByPokedexId(1000);
         expect(pokemon.name).toEqual("Gholdengo");
+        expect(pokemon.moves.some(x => x.moveName === 'Tuonopugno')).toEqual(true);
     })
     
 })
