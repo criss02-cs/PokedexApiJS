@@ -19,4 +19,10 @@ describe("Move test", () => {
         const move = await client.move.getResourceByName("lanciafiamme");
         expect(move.description).toEqual("Il bersaglio viene colpito da intense fiammate che possono anche scottarlo.");
     });
-})
+    it("Get Move list by id", async () => {
+        const client = new MainClient();
+        const magikarp = await client.pokemon.getResourceByName("magikarp");
+        const moves = await client.move.getListByIds(magikarp.moves.map(x => x.moveId));
+        expect(moves.length).toEqual(5);
+    })
+});

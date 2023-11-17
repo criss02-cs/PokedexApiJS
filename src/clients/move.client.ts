@@ -22,4 +22,11 @@ export class MoveClient implements IResourceService<Move, Move> {
         return response.data;
     }
 
+    async getListByIds(ids: string[]) {
+        if(ids.length === 0) {
+            throw new Error("La lista di id non può essere vuota");
+        } 
+        const response = await axios.post<Move[]>(`${ENDPOINTS.moves}getMovesByIdList`, ids);
+        return response.data;
+    }
 }

@@ -23,4 +23,12 @@ export class AbilityClient implements IResourceService<Ability, Ability> {
         return response.data;
     }
 
+    async getListByIds(ids: string[]) {
+        if(ids.length === 0) {
+            throw new Error("La lista di id non può essere vuota");
+        } 
+        const response = await axios.post<Ability[]>(`${ENDPOINTS.abilita}getAbilityListById`, ids);
+        return response.data;
+    }
+
 }
