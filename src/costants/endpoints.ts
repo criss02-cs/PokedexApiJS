@@ -1,4 +1,4 @@
-const base = 'https://crissscode-pokedex-api.cyclic.app';
+const base = 'https://pokedex.cristianoaloigi.it';
 
 export const ENDPOINTS = {
     pokemon: base + '/pokemon/',
