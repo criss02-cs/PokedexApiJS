@@ -23,6 +23,7 @@ jobs:
                 npm i
                 fi
             - run: npm test
+            - run: npm run build
             - run: npm run semantic-release
               env:
                 NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
