@@ -31,4 +31,9 @@ export class PokemonClient implements IResourceService<PokemonList, PokemonResou
         return response.data;
     }
 
+    async getMaxPokemonNumber(): Promise<number> {
+        const response = await axios.get<number>(`${ENDPOINTS.pokemon}getMaxPokemonNumber`);
+        return response.data;
+    }
+
 }
