@@ -11,5 +11,8 @@
             }
         ],
         "@semantic-release/npm"
-    ]
+    ],
+    "parserOpts": {
+        "mergePattern": "Merged PR .*:"
+    }
 }
