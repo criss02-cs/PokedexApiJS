@@ -9,7 +9,6 @@
                     "dist/**"
                 ]
             }
-        ],
-        "@semantic-release/git"
+        ]
     ]
 }
