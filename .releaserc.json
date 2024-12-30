@@ -5,10 +5,7 @@
             "@semantic-release/github",
             {
                 "assets": [
-                    "dist/**",
-                    "package.json",
-                    "README.md",
-                    "CHANGELOG.md"
+                    "package.json"
                 ],
                 "message": "chore: Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
