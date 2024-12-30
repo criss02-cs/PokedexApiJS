@@ -20,7 +20,7 @@
     "semantic-release": "semantic-release --branches main",
     "commit": "git-cz",
     "acp": "git add . && npm run commit && git push",
-    "build": "rm -rf dist && tsc --project tsconfig.build.json && cp package.json dist/package.json"
+    "build": "rm -rf dist && tsc --project tsconfig.json && cp package.json dist/package.json"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",
