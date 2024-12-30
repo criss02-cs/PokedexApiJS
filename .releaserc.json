@@ -9,6 +9,7 @@
                     "dist/**"
                 ]
             }
-        ]
+        ],
+        "@semantic-release/npm"
     ]
 }
